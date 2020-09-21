@@ -1,0 +1,36 @@
+project=>
+npm init
+npm i --s express@version mongoose@version express-handlebars@version body-parser@version
+
+Start MongoDB.bat=>
+cd C:\Program Files\MongoDB\Server|3.6\bin
+mongod.exe --dbpath C:\Users\thazin\mongo-data
+(or)
+C:\data\db
+// sudo service mongod stop
+// sudo apt-get purge mongodb-org*
+// sudo rm -r /var/log/mongodb
+// sudo apt-get autoclean
+// sudo apt-get autoremove
+// sudo apt-get purge mongodb-org*
+// mongod
+
+download => MongoDB Compass 
+
+mongodb-nodejsapp => mongoose.connect() => database
+		  => mongoose.Schema({}) => tableCollection
+				express() => server
+	`			express.Router() => controllerRouter
+				require('path') => dirpath
+				require('express-handlebars') => structuringApp'sViews
+				=>dirpath=>structuringApp'sViews
+app.set('views',path.join(__dirname,'/views/'))
+app.engine('hbs',exphbs({extname:'hbs', defaultLayout:'mainLayout',layoutsDir:__dirname+'/views/layouts/'}))
+app.set('view engine','hbs')
+				require('body-parser') => formdata
+				=>formdata
+app.use(bodyparser.urlencoded({
+    extended:true
+}))
+app.use(bodyparser.json())
+
